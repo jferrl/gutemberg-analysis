@@ -19,7 +19,7 @@ public class WordsCount extends Analysis {
     public void execute() {
         try {
             this.countedWords = 0;
-            for (final File file : this.repository.getAll()) {
+            for (final File file : this.repository.getAllFiles()) {
                 this.countedWords += this.getWordsCountFromFile(file);
             }
         } catch (Exception e) {

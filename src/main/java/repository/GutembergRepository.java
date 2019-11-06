@@ -14,7 +14,7 @@ public class GutembergRepository implements Repository {
     }
 
     @Override
-    public File[] getAll() {
+    public File[] getAllFiles() {
         return this.folder.listFiles();
     }
 
