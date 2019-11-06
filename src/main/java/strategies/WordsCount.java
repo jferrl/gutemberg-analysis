@@ -52,5 +52,5 @@ public class WordsCount extends Analysis {
             //TODO: handle exception
             return 0;
         }
-    }    
+    }
 }
