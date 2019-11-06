@@ -1,5 +1,7 @@
 package gutemberg;
 
+import main.java.repository.GutembergRepository;
+
 /**
  * Hello world!
  */
@@ -9,6 +11,7 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       GutembergRepository repository = new GutembergRepository("C:\\Git\\gutemberg-analysis\\dataset\\txt");
+       repository.getAll();
     }
 }
