@@ -27,6 +27,10 @@ public class WordsCount extends Analysis {
         }
     }
 
+    public int getResult() {
+        return this.countedWords;
+    }
+
     private int getWordsCountFromFile(File file) {
         try {
             String line; 
@@ -47,9 +51,5 @@ public class WordsCount extends Analysis {
             //TODO: handle exception
             return 0;
         }
-    }
-
-    public int getResult() {
-        return this.countedWords;
-    }
+    }    
 }
