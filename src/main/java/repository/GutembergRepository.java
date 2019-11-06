@@ -7,17 +7,19 @@ import java.io.File;
  */
 public class GutembergRepository implements Repository {
 
-    private File folder;
+    private final File folder;
 
     public GutembergRepository(String folder) {
         this.folder = new File(folder);
     }
 
-    public void getAll() {
-        for (final File fileEntry : folder.listFiles()) {
-            if (!fileEntry.isDirectory()) {
-                System.out.println(fileEntry.getName());
-            } 
-        }
+    @Override
+    public File[] getAll() {
+        return this.folder.listFiles();
+    }
+
+    @Override
+    public int size() {
+        return this.folder.listFiles().length;
     }
 }

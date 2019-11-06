@@ -1,7 +1,8 @@
 package main.java.repository;
 
-public interface Repository {
+import java.io.File;
 
-    void getAll();
-    
+public interface Repository {
+    public File[] getAll();
+    public int size();
 }
