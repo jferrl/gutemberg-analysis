@@ -20,14 +20,14 @@ public class WordsCount extends Analysis {
         try {
             this.countedWords = 0;
             for (final File file : this.repository.getAll()) {
-                this.countedWords += this.readFile(file);
+                this.countedWords += this.getWordsCountFromFile(file);
             }
         } catch (Exception e) {
             //TODO: handle exception
         }
     }
 
-    private int readFile(File file) {
+    private int getWordsCountFromFile(File file) {
         try {
             String line; 
             int countWords = 0; 
