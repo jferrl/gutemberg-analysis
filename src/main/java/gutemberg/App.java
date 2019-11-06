@@ -3,12 +3,9 @@ package gutemberg;
 import main.java.repository.GutembergRepository;
 import main.java.strategies.WordsCount;
 
-/**
- * Hello world!
- */
 public final class App {
     /**
-     * Says hello to the world.
+     * Start program execution
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
