@@ -20,6 +20,6 @@ public final class App {
         // Case 3
         WordsCount wordsCount = new WordsCount(repository);
         wordsCount.execute();
-        System.out.println(wordsCount.getResult());
+        System.out.println("Number of Words: " + wordsCount.getResult() + "\n");
     }
 }
