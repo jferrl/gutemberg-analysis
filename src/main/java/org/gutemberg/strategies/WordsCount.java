@@ -29,8 +29,8 @@ public class WordsCount extends Analysis {
         }
     }
 
-    public int getResult() {
-        return this.countedWords;
+    public void getResult() {
+        System.out.println("Number of Words: " + this.countedWords + "\n");
     }
 
     private int getWordsCountFromFile(File file) {

@@ -20,11 +20,11 @@ public final class App {
         // Case 2
         FeaturedWords featuredWords = new FeaturedWords(repository);
         featuredWords.execute();
+        featuredWords.getResult();
         // Case 3
         WordsCount wordsCount = new WordsCount(repository);
         wordsCount.execute();
-        System.out.println("Number of Words: " + wordsCount.getResult() + "\n");
-
+        wordsCount.getResult();
         // Case 4
 
         // Case 5
