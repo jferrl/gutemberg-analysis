@@ -4,6 +4,7 @@ import org.gutemberg.repository.GutembergRepository;
 import org.gutemberg.strategies.FeaturedWords;
 import org.gutemberg.strategies.Tokenization;
 import org.gutemberg.strategies.WordsCount;
+import org.gutemberg.strategies.NumbersCount;
 
 public final class App {
     /**
@@ -26,7 +27,9 @@ public final class App {
         wordsCount.execute();
         wordsCount.getResult();
         // Case 4
-
+        NumbersCount numbersCount = new NumbersCount(repository);
+        numbersCount.execute();
+        numbersCount.getResult();
         // Case 5
     }
 }

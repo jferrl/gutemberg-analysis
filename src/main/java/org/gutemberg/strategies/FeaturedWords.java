@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import org.gutemberg.repository.Repository;
 
 /**
- * Tokenization
+ * FeaturedWords
  */
 public class FeaturedWords extends Analysis {
 
