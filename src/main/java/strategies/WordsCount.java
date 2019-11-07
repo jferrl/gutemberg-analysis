@@ -1,7 +1,7 @@
-package main.java.strategies;
+package strategies;
 
 import java.io.*;
-import main.java.repository.Repository; 
+import repository.Repository;
 
 /**
  * WordsCount
@@ -23,7 +23,7 @@ public class WordsCount extends Analysis {
                 this.countedWords += this.getWordsCountFromFile(file);
             }
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
         }
     }
 
@@ -33,23 +33,23 @@ public class WordsCount extends Analysis {
 
     private int getWordsCountFromFile(File file) {
         try {
-            String line; 
-            int countWords = 0; 
+            String line;
+            int countWords = 0;
 
             FileInputStream fileStream = new FileInputStream(file);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream)); 
+            BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
 
-            while((line = reader.readLine()) != null) {  
-                if(!line.equals("")) {                   
-                    String[] lineWords = line.split("\\s+"); 
-                    countWords += lineWords.length;  
-                } 
+            while ((line = reader.readLine()) != null) {
+                if (!line.equals("")) {
+                    String[] lineWords = line.split("\\s+");
+                    countWords += lineWords.length;
+                }
             }
-            reader.close(); 
-            System.out.print("\nFile readed: " + file.getName() + ". Words: " + Integer.toString(countWords)+ "\n");
+            reader.close();
+            System.out.print("\nFile readed: " + file.getName() + ". Words: " + Integer.toString(countWords) + "\n");
             return countWords;
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
             return 0;
         }
     }

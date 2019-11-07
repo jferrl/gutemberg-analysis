@@ -1,11 +1,12 @@
 package gutemberg;
 
-import main.java.repository.GutembergRepository;
-import main.java.strategies.WordsCount;
+import repository.GutembergRepository;
+import strategies.WordsCount;
 
 public final class App {
     /**
      * Start program execution
+     * 
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {

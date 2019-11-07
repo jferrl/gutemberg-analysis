@@ -1,6 +1,6 @@
-package main.java.strategies;
+package strategies;
 
-import main.java.repository.Repository;
+import repository.Repository;
 
 /**
  * Analysis
@@ -13,5 +13,5 @@ public abstract class Analysis implements AnalysisStrategy {
         this.repository = repository;
     }
 
-   public abstract void execute();
+    public abstract void execute();
 }

@@ -1,4 +1,4 @@
-package main.java.strategies;
+package strategies;
 
 /**
  * AnalysisStrategy
