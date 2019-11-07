@@ -32,7 +32,7 @@ public class Tokenization extends Analysis {
             StreamTokenizer tokenizer = new StreamTokenizer(new FileReader(file));
             while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
                 if (tokenizer.ttype == StreamTokenizer.TT_WORD) {
-                    this.writeTokenToFile(tokenizer.sval + "\n");
+                    this.writeTokenToFile(tokenizer.sval + ",");
                 }
             }
         } catch (Exception e) {
