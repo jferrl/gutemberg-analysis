@@ -10,14 +10,17 @@ public class Tokenization extends Analysis {
 
     private FileOutputStream tokens;
 
-    public Tokenization(Repository repository) {
+    private final String outputFile;
+
+    public Tokenization(Repository repository, String outputPath) {
         super(repository);
+        this.outputFile = outputPath;
     }
 
     @Override
     public void execute() {
         try {
-            this.tokens = new FileOutputStream("C:\\Git\\tokens.txt");
+            this.tokens = new FileOutputStream(this.outputFile);
             for (final File file : this.repository.getAllFiles()) {
                 this.readTokensFromFile(file);
             }

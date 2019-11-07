@@ -17,7 +17,7 @@ public final class App {
         wordsCount.execute();
         System.out.println(wordsCount.getResult());
 
-        Tokenization tokenization = new Tokenization(repository);
+        Tokenization tokenization = new Tokenization(repository, "C:\\Git\\tokens.txt");
         tokenization.execute();
     }
 }
