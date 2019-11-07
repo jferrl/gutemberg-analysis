@@ -49,7 +49,8 @@ public class WordsCount extends Analysis {
                 }
             }
             reader.close();
-            System.out.print("\nFile readed: " + file.getName() + ". Words: " + Integer.toString(countWords) + "\n");
+            // System.out.print("\nFile readed: " + file.getName() + ". Words: " +
+            // Integer.toString(countWords) + "\n");
             return countWords;
         } catch (Exception e) {
             // TODO: handle exception

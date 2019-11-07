@@ -1,14 +1,14 @@
 package org.gutemberg.strategies;
 
 import java.io.*;
-import java.text.BreakIterator;
-
 import org.gutemberg.repository.Repository;
 
 /**
  * Tokenization
  */
 public class Tokenization extends Analysis {
+
+    private FileOutputStream tokens;
 
     public Tokenization(Repository repository) {
         super(repository);
@@ -17,30 +17,33 @@ public class Tokenization extends Analysis {
     @Override
     public void execute() {
         try {
+            this.tokens = new FileOutputStream("C:\\Git\\tokens.txt");
             for (final File file : this.repository.getAllFiles()) {
-                getSentencesFromFile(file);
+                this.readTokensFromFile(file);
+            }
+            this.tokens.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
+    private void readTokensFromFile(File file) {
+        try {
+            StreamTokenizer tokenizer = new StreamTokenizer(new FileReader(file));
+            while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
+                if (tokenizer.ttype == StreamTokenizer.TT_WORD) {
+                    this.writeTokenToFile(tokenizer.sval + "\n");
+                }
             }
         } catch (Exception e) {
             // TODO: handle exception
         }
     }
 
-    private void getSentencesFromFile(File file) {
+    private void writeTokenToFile(String token) {
         try {
-            String line;
-
-            FileInputStream fileStream = new FileInputStream(file);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
-
-            while ((line = reader.readLine()) != null) {
-                BreakIterator iterator = BreakIterator.getWordInstance();
-                iterator.setText(line);
-                while (iterator.next() != BreakIterator.DONE) {
-
-                }
-            }
-            reader.close();
-
+            byte byteToken[] = token.getBytes();
+            this.tokens.write(byteToken);
         } catch (Exception e) {
             // TODO: handle exception
         }

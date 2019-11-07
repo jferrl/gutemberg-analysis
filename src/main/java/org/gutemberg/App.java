@@ -1,6 +1,7 @@
 package org.gutemberg;
 
 import org.gutemberg.repository.GutembergRepository;
+import org.gutemberg.strategies.Tokenization;
 import org.gutemberg.strategies.WordsCount;
 
 public final class App {
@@ -15,5 +16,8 @@ public final class App {
         WordsCount wordsCount = new WordsCount(repository);
         wordsCount.execute();
         System.out.println(wordsCount.getResult());
+
+        Tokenization tokenization = new Tokenization(repository);
+        tokenization.execute();
     }
 }
