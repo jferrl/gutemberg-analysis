@@ -29,7 +29,7 @@ public class NumbersCount extends Analysis {
     }
 
     public void getResult() {
-        System.out.println("Valid Years Count: " + this.validYears + "\n");
+        System.out.println("Numbers Count: " + this.validYears + "\n");
     }
 
     private void readTokensFromFile(File file) {
