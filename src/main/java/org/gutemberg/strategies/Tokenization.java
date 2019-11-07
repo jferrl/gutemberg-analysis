@@ -8,8 +8,6 @@ import org.gutemberg.repository.Repository;
  */
 public class Tokenization extends Analysis {
 
-    private FileOutputStream tokens;
-
     private final String outputFile;
 
     public Tokenization(Repository repository, String outputPath) {
@@ -20,11 +18,9 @@ public class Tokenization extends Analysis {
     @Override
     public void execute() {
         try {
-            this.tokens = new FileOutputStream(this.outputFile);
             for (final File file : this.repository.getAllFiles()) {
                 this.readTokensFromFile(file);
             }
-            this.tokens.close();
         } catch (Exception e) {
             // TODO: handle exception
         }
@@ -33,20 +29,17 @@ public class Tokenization extends Analysis {
     private void readTokensFromFile(File file) {
         try {
             StreamTokenizer tokenizer = new StreamTokenizer(new FileReader(file));
+            System.out.println("File:" + file.getName() + "\n");
             while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
-                if (tokenizer.ttype == StreamTokenizer.TT_WORD) {
-                    this.writeTokenToFile(tokenizer.sval + ",");
+                switch (tokenizer.ttype) {
+                case StreamTokenizer.TT_NUMBER:
+                    // System.out.println(new Double(tokenizer.nval).intValue());
+                    break;
+                case StreamTokenizer.TT_WORD:
+                    // System.out.println(tokenizer.sval);
+                    break;
                 }
             }
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-    }
-
-    private void writeTokenToFile(String token) {
-        try {
-            byte byteToken[] = token.getBytes();
-            this.tokens.write(byteToken);
         } catch (Exception e) {
             // TODO: handle exception
         }
