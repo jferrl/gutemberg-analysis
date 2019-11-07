@@ -6,9 +6,9 @@ import org.gutemberg.repository.Repository;
 /**
  * Tokenization
  */
-public class Tokenization extends Analysis {
+public class FeaturedWords extends Analysis {
 
-    public Tokenization(Repository repository) {
+    public FeaturedWords(Repository repository) {
         super(repository);
     }
 
