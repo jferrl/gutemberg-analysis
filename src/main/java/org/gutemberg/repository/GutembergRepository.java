@@ -1,4 +1,4 @@
-package repository;
+package org.gutemberg.repository;
 
 import java.io.File;
 

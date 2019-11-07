@@ -1,4 +1,4 @@
-package strategies;
+package org.gutemberg.strategies;
 
 /**
  * AnalysisStrategy

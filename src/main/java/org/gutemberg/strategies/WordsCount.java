@@ -1,7 +1,7 @@
-package strategies;
+package org.gutemberg.strategies;
 
 import java.io.*;
-import repository.Repository;
+import org.gutemberg.repository.Repository;
 
 /**
  * WordsCount

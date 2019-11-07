@@ -1,7 +1,7 @@
-package gutemberg;
+package org.gutemberg;
 
-import repository.GutembergRepository;
-import strategies.WordsCount;
+import org.gutemberg.repository.GutembergRepository;
+import org.gutemberg.strategies.WordsCount;
 
 public final class App {
     /**

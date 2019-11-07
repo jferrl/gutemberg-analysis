@@ -1,6 +1,6 @@
-package strategies;
+package org.gutemberg.strategies;
 
-import repository.Repository;
+import org.gutemberg.repository.Repository;
 
 /**
  * Analysis
