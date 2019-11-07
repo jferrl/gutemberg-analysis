@@ -4,7 +4,7 @@ import java.io.*;
 import org.gutemberg.repository.Repository;
 
 /**
- * YearsCount
+ * NumbersCount
  */
 public class NumbersCount extends Analysis {
 
