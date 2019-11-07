@@ -1,6 +1,8 @@
 package org.gutemberg.strategies;
 
 import java.io.*;
+import java.text.BreakIterator;
+
 import org.gutemberg.repository.Repository;
 
 /**
@@ -40,9 +42,10 @@ public class WordsCount extends Analysis {
             BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
 
             while ((line = reader.readLine()) != null) {
-                if (!line.equals("")) {
-                    String[] lineWords = line.split("\\s+");
-                    countWords += lineWords.length;
+                BreakIterator iterator = BreakIterator.getWordInstance();
+                iterator.setText(line);
+                while (iterator.next() != BreakIterator.DONE) {
+                    countWords += 1;
                 }
             }
             reader.close();
