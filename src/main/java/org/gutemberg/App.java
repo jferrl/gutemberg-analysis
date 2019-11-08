@@ -7,7 +7,7 @@ import org.gutemberg.strategies.FeaturedWords;
 import org.gutemberg.strategies.Tokenization;
 import org.gutemberg.strategies.WordsCount;
 import org.gutemberg.strategies.NumbersCount;
-
+import org.gutemberg.strategies.ParagraphSize;
 public final class App {
     /**
      * Start program execution
@@ -43,6 +43,10 @@ public final class App {
             numbersCount.getResult();
             break;
         case 5:
+                
+           ParagraphSize paragraphSize = new ParagraphSize(repository);
+           paragraphSize.execute();
+           paragraphSize.getResult();
             break;
         }
     }
