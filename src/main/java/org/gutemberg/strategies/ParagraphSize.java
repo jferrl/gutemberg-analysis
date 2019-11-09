@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  */
 public class ParagraphSize extends Analysis {
 
-    private double avarageWords;
+    private double averageWords;
 
     public ParagraphSize(Repository repository) {
         super(repository);
