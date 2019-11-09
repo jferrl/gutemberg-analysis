@@ -13,16 +13,16 @@ public class ParagraphSize extends Analysis {
 
     public ParagraphSize(Repository repository) {
         super(repository);
-        this.avarageWords = 0;
+        this.averageWords = 0;
     }
 
     @Override
     public void execute() {
         try {
            
-            this.avarageWords = 0;
+            this.averageWords = 0;
             for (final File file : this.repository.getAllFiles()) {
-                this.avarageWords +=this.getParagraphSize(file);
+                this.averageWords +=this.getParagraphSize(file);
             }
         } catch (Exception e) {
             // TODO: handle exception
@@ -33,7 +33,7 @@ public class ParagraphSize extends Analysis {
 
     public void getResult() {
 
-        System.out.println("Media: " +this.avarageWords) ;
+        System.out.println("Media: " +this.averageWords) ;
 
     }
 
@@ -67,8 +67,8 @@ public class ParagraphSize extends Analysis {
 
 
 
-        double avarageWords = (double)wc/(double)pl;
-        return  avarageWords;
+        double averageWords = (double)wc/(double)pl;
+        return  averageWords;
     }
 
 
