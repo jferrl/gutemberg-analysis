@@ -13,7 +13,7 @@ Link to dataset: https://drive.google.com/file/d/0B2Mzhc7popBga2RkcWZNcjlRTGM/ed
 -   Tokenize the dataset in different sentences
 -   Find the 10 most used words
 -   Total number of words
--   Find number of number words
+-   Find valid numeric words
 -   Average size of paragraph
 
 ## Team Members
