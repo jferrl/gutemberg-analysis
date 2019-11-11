@@ -1,0 +1,17 @@
+language: java
+jdk: oraclejdk8
+sudo: false
+
+# For maven projects, the default installation phase can be skipped
+install: true
+
+# The branches to build.
+# Can either include or exclude branches.
+# Here only changes to the master branch will be build.
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - "$HOME/.m2/repository"
