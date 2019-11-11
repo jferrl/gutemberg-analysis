@@ -21,3 +21,12 @@ Link to dataset: https://drive.google.com/file/d/0B2Mzhc7popBga2RkcWZNcjlRTGM/ed
 Luis Gómez García
 Cansu Ozturk
 Jorge Ferrero Linacero
+
+## How to execute it
+
+From vscode:
+
+-   Run
+-   Debug
+
+Program accepts gutemberg file location as execution args(args[0] = Path of gutemberg dataset)
