@@ -16,7 +16,7 @@ Link to dataset: https://drive.google.com/file/d/0B2Mzhc7popBga2RkcWZNcjlRTGM/ed
 -   Find number of number words
 -   Average size of paragraph
 
-## Team Merbers
+## Team Members
 
 Luis Gómez García
 Cansu Ozturk

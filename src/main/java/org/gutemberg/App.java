@@ -22,7 +22,7 @@ public final class App {
         int option = sc.nextInt();
         sc.close();
 
-        GutembergRepository repository = new GutembergRepository(App.getGutembergPath());
+        GutembergRepository repository = new GutembergRepository(App.getGutembergPath(args));
         switch (option) {
         case 1:
             Tokenization tokenization = new Tokenization(repository);
@@ -51,8 +51,8 @@ public final class App {
         }
     }
 
-    private static String getGutembergPath() {
-        String path = System.getProperty("GutembergPath");
+    private static String getGutembergPath(String[] args) {
+        String path = args[0];
         if (path == null || path == "") {
             throw new Error("Invalid gutemberg path");
         }

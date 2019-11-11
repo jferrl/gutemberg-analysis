@@ -26,7 +26,6 @@ public class Tokenization extends Analysis {
     private void readTokensFromFile(File file) {
         try {
             StreamTokenizer tokenizer = new StreamTokenizer(new FileReader(file));
-            System.out.println("File:" + file.getName() + "\n");
             while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
                 switch (tokenizer.ttype) {
                 case StreamTokenizer.TT_NUMBER:
