@@ -24,8 +24,14 @@ public final class App {
         sc.close();
 
         long startTime = System.currentTimeMillis();
-
         GutembergRepository repository = new GutembergRepository(App.getGutembergPath(args));
+        App.executeAnalysis(option, repository);
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+        System.out.println("Elapsed time: " + TimeUnit.MILLISECONDS.toSeconds(elapsedTime) + " seconds");
+    }
+
+    private static void executeAnalysis(int option, GutembergRepository repository) {
         switch (option) {
         case 1:
             Tokenization tokenization = new Tokenization(repository);
@@ -52,10 +58,6 @@ public final class App {
             paragraphSize.getResult();
             break;
         }
-
-        long stopTime = System.currentTimeMillis();
-        long elapsedTime = stopTime - startTime;
-        System.out.println("Elapsed time: " + TimeUnit.MILLISECONDS.toSeconds(elapsedTime) + " seconds");
     }
 
     private static String getGutembergPath(String[] args) {
