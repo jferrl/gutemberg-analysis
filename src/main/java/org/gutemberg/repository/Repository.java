@@ -2,8 +2,11 @@ package org.gutemberg.repository;
 
 import java.io.File;
 
+/**
+ * Repository
+ */
 public interface Repository {
-    public File[] getAllFiles();
+    File[] getAllFiles();
 
-    public int size();
+    int size();
 }

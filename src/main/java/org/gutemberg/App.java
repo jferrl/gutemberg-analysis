@@ -10,6 +10,9 @@ import org.gutemberg.strategies.NumbersCount;
 import org.gutemberg.strategies.ParagraphSize;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * App
+ */
 public final class App {
     /**
      * Start program execution
@@ -56,6 +59,8 @@ public final class App {
             ParagraphSize paragraphSize = new ParagraphSize(repository);
             paragraphSize.execute();
             paragraphSize.getResult();
+            break;
+        default:
             break;
         }
     }

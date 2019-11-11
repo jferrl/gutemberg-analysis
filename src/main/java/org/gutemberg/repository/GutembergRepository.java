@@ -3,6 +3,8 @@ package org.gutemberg.repository;
 import java.io.File;
 
 /**
+ * Class that manage the access to files
+ * 
  * GutembergRepository
  */
 public class GutembergRepository implements Repository {

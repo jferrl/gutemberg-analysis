@@ -14,6 +14,7 @@ import org.gutemberg.repository.Repository;
  */
 public class FeaturedWords extends Analysis {
 
+    private static int wordsFilterLimit = 10;
     private HashMap<String, Integer> words;
 
     public FeaturedWords(Repository repository) {
@@ -51,8 +52,8 @@ public class FeaturedWords extends Analysis {
                 }
             }
             this.words = this.words.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                    .limit(10).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1,
-                            LinkedHashMap::new));
+                    .limit(FeaturedWords.wordsFilterLimit).collect(Collectors.toMap(Map.Entry::getKey,
+                            Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
         } catch (Exception e) {
             // TODO: handle exception
         }
