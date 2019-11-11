@@ -1,5 +1,6 @@
 # Gutemberg Analysis
 
+[![Build Status](https://travis-ci.org/jferrl/gutemberg-analysis.svg?branch=master)](https://travis-ci.org/jferrl/gutemberg-analysis)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3dcbeed599bb53561265/maintainability)](https://codeclimate.com/github/jferrl/gutemberg-analysis/maintainability)
 
 This project has been created with the purpose of analyzing the linguistic corpus of Gutemberg. In addition, this java project will be prepared to adapt it to a Hadoop execution.
