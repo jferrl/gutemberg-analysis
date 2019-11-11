@@ -43,7 +43,6 @@ public final class App {
             numbersCount.getResult();
             break;
         case 5:
-                
            ParagraphSize paragraphSize = new ParagraphSize(repository);
            paragraphSize.execute();
            paragraphSize.getResult();
