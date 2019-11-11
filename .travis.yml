@@ -1,9 +1,12 @@
 language: java
-jdk: oraclejdk8
+jdk: openjdk8
 sudo: false
 
 # For maven projects, the default installation phase can be skipped
 install: true
+
+notifications:
+  email: false
 
 # The branches to build.
 # Can either include or exclude branches.
