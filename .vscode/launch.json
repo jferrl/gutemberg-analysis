@@ -1,18 +1,10 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - App",
-            "request": "launch",
-            "mainClass": "org.gutemberg.App",
-            "projectName": "gutemberg"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - App",
-            "request": "launch",
-            "mainClass": "gutemberg.App",
-            "projectName": "gutemberg"
-        }
-    ]
+    "configurations": [{
+        "type": "java",
+        "name": "CodeLens (Launch) - App",
+        "request": "launch",
+        "mainClass": "org.gutemberg.App",
+        "projectName": "gutemberg",
+        "vmArgs": "-GutembergPath=C:\\Git\\gutemberg-analysis\\dataset\\txt",
+    }]
 }

@@ -8,6 +8,7 @@ import org.gutemberg.strategies.Tokenization;
 import org.gutemberg.strategies.WordsCount;
 import org.gutemberg.strategies.NumbersCount;
 import org.gutemberg.strategies.ParagraphSize;
+
 public final class App {
     /**
      * Start program execution
@@ -21,7 +22,7 @@ public final class App {
         int option = sc.nextInt();
         sc.close();
 
-        GutembergRepository repository = new GutembergRepository("C:\\Git\\gutemberg-analysis\\dataset\\txt");
+        GutembergRepository repository = new GutembergRepository(App.getGutembergPath());
         switch (option) {
         case 1:
             Tokenization tokenization = new Tokenization(repository);
@@ -43,11 +44,19 @@ public final class App {
             numbersCount.getResult();
             break;
         case 5:
-           ParagraphSize paragraphSize = new ParagraphSize(repository);
-           paragraphSize.execute();
-           paragraphSize.getResult();
+            ParagraphSize paragraphSize = new ParagraphSize(repository);
+            paragraphSize.execute();
+            paragraphSize.getResult();
             break;
         }
+    }
+
+    private static String getGutembergPath() {
+        String path = System.getProperty("GutembergPath");
+        if (path == null || path == "") {
+            throw new Error("Invalid gutemberg path");
+        }
+        return path;
     }
 
     private static void printMenu() {
