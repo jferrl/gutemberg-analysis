@@ -8,52 +8,51 @@ import org.gutemberg.repository.Repository;
  */
 public class ParagraphSize extends Analysis {
 
-    private double averageWords;
+    private int words;
+    private int paragraphs;
 
     public ParagraphSize(Repository repository) {
         super(repository);
-        this.averageWords = 0;
+        this.words = 0;
+        this.paragraphs = 0;
     }
 
     @Override
     public void execute() {
         try {
-            this.averageWords = 0;
+            this.words = 0;
+            this.paragraphs = 0;
             for (final File file : this.repository.getAllFiles()) {
-                this.averageWords += this.getParagraphSize(file);
+                this.getParagraphSize(file);
             }
+
         } catch (Exception e) {
             // TODO: handle exception
         }
     }
 
     public void getResult() {
-        System.out.println("Words/paragraph average: " + this.averageWords);
+        System.out.println("Words/paragraph average: " + (double) this.words / (double) this.paragraphs);
     }
 
-    private double getParagraphSize(File file) throws IOException {
+    private void getParagraphSize(File file) throws IOException {
         FileInputStream fileStream = new FileInputStream(file);
-        int pl = 0;
         byte[] byteArray = new byte[(int) file.length()];
         fileStream.read(byteArray);
         String data = new String(byteArray);
         data = data.trim().replaceAll("(?m)(^ *| +(?= |$))", "").replaceAll("(?m)^$([\r\n]+?)(^$[\r\n]+?^)+", "$1");
         String[] paragraphs = data.toString().split("\r\n\r\n");
-        pl = pl + paragraphs.length;
+        this.paragraphs += paragraphs.length;
         fileStream.close();
 
         String[] words = null;
-        int wc = 0;
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String s;
         while ((s = br.readLine()) != null) {
             words = s.split(" ");
-            wc = wc + words.length;
+            this.words += words.length;
         }
         br.close();
-
-        double averageWords = (double) wc / (double) pl;
-        return averageWords;
     }
 }
