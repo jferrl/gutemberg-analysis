@@ -8,6 +8,7 @@ import org.gutemberg.strategies.Tokenization;
 import org.gutemberg.strategies.WordsCount;
 import org.gutemberg.strategies.NumbersCount;
 import org.gutemberg.strategies.ParagraphSize;
+import java.util.concurrent.TimeUnit;
 
 public final class App {
     /**
@@ -21,6 +22,8 @@ public final class App {
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
         sc.close();
+
+        long startTime = System.currentTimeMillis();
 
         GutembergRepository repository = new GutembergRepository(App.getGutembergPath(args));
         switch (option) {
@@ -49,6 +52,10 @@ public final class App {
             paragraphSize.getResult();
             break;
         }
+
+        long stopTime = System.currentTimeMillis();
+        long elapsedTime = stopTime - startTime;
+        System.out.println("Elapsed time: " + TimeUnit.MILLISECONDS.toSeconds(elapsedTime) + " seconds");
     }
 
     private static String getGutembergPath(String[] args) {

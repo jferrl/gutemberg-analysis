@@ -28,7 +28,6 @@ public class FeaturedWords extends Analysis {
             for (final File file : this.repository.getAllFiles()) {
                 this.readTokensFromFile(file);
             }
-            System.out.println(this.words.toString());
         } catch (Exception e) {
             // TODO: handle exception
         }
