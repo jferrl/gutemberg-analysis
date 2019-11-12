@@ -14,6 +14,13 @@ import java.util.concurrent.TimeUnit;
  * App
  */
 public final class App {
+
+    private static final int tokenization = 1;
+    private static final int featuredWords = 2;
+    private static final int wordsCounter = 3;
+    private static final int numberCounter = 4;
+    private static final int paragraphSize = 5;
+
     /**
      * Start program execution
      * 
@@ -36,26 +43,26 @@ public final class App {
 
     private static void executeAnalysis(int option, GutembergRepository repository) {
         switch (option) {
-        case 1:
+        case App.tokenization:
             Tokenization tokenization = new Tokenization(repository);
             tokenization.execute();
             break;
-        case 2:
+        case App.featuredWords:
             FeaturedWords featuredWords = new FeaturedWords(repository);
             featuredWords.execute();
             featuredWords.getResult();
             break;
-        case 3:
+        case App.wordsCounter:
             WordsCount wordsCount = new WordsCount(repository);
             wordsCount.execute();
             wordsCount.getResult();
             break;
-        case 4:
+        case App.numberCounter:
             NumbersCount numbersCount = new NumbersCount(repository);
             numbersCount.execute();
             numbersCount.getResult();
             break;
-        case 5:
+        case App.paragraphSize:
             ParagraphSize paragraphSize = new ParagraphSize(repository);
             paragraphSize.execute();
             paragraphSize.getResult();
