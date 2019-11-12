@@ -21,9 +21,9 @@ Link to dataset: https://drive.google.com/file/d/0B2Mzhc7popBga2RkcWZNcjlRTGM/ed
 
 ## Team Members
 
-Luis Gómez García
-Cansu Ozturk
-Jorge Ferrero Linacero
+-   Luis Gómez García
+-   Cansu Ozturk
+-   Jorge Ferrero Linacero
 
 ## How to execute it
 
