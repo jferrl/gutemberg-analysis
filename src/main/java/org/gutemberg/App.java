@@ -83,7 +83,7 @@ public final class App {
     private static void printMenu() {
         System.out.println("Gutenberg Dataset. Enter a number between 1 and 5 for:\n"
                 + "   -1: Tokenize the dataset in different words \n" + "   -2: Find the 10 most used words \n"
-                + "   -3: Total number of words \n" + "   -4: Find number of number words \n"
+                + "   -3: Total number of words \n" + "   -4: Find number of numerical words \n"
                 + "   -5: Average size of paragraph \n");
     }
 }
